@@ -1,0 +1,89 @@
+/* Importación de Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Variables de Color (opcional, Tailwind las maneja bien, pero útil para custom CSS) */
+:root {
+    --primary-color: #059669; /* emerald-600 */
+    --primary-color-dark: #047857; /* emerald-700 */
+    --primary-color-darker: #065f46; /* emerald-800 */
+    --teal-color: #0d9488; /* teal-600 */
+    --orange-color: #f97316; /* orange-500 */
+}
+
+/* Estilos Base */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc; /* bg-slate-50 */
+    scroll-behavior: smooth; /* Para el desplazamiento suave de los enlaces del menú */
+}
+
+/* Estilo para la barra de desplazamiento del modal */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+    background: #a0aec0; /* gray-400 */
+    border-radius: 10px;
+}
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #718096; /* gray-500 */
+}
+
+/* Ocultar modal por defecto */
+#recipeModal {
+    display: none;
+    opacity: 0; /* Start hidden for transition */
+}
+
+/* Clases Utilitarias para Colores (Ejemplo si no se usa Tailwind directo) */
+.text-primary { color: var(--primary-color); }
+.text-primary-dark { color: var(--primary-color-dark); }
+.text-primary-darker { color: var(--primary-color-darker); }
+.bg-primary { background-color: var(--primary-color); }
+.bg-teal { background-color: var(--teal-color); }
+.bg-orange { background-color: var(--orange-color); }
+.border-primary { border-color: var(--primary-color); }
+
+/* Estilo para encabezados de sección */
+.section-header {
+    grid-column: 1 / -1; /* Span all columns in grid */
+    padding-top: 1.5rem; /* pt-6 */
+    padding-bottom: 0.5rem; /* pb-2 */
+    margin-bottom: 1rem; /* mb-4 */
+    border-bottom: 2px solid var(--primary-color);
+    scroll-margin-top: 70px; /* Ajusta este valor según la altura de tu navbar fija */
+}
+.section-header h2 {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    color: var(--primary-color-dark);
+    text-align: center;
+}
+.section-header p {
+    font-size: 0.875rem; /* text-sm */
+    color: #4b5563; /* text-gray-600 */
+    text-align: center;
+    margin-top: 0.25rem; /* mt-1 */
+}
+
+/* Estilos para el menú móvil (si se necesitan más allá de Tailwind) */
+/* Por ahora, Tailwind maneja la visibilidad con la clase 'hidden' */
+
+/* Efecto hover sutil para tarjetas */
+.recipe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+}
+.recipe-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Ajuste para asegurar que el modal no cause doble scroll */
+body.modal-open {
+    overflow: hidden;
+}
+
