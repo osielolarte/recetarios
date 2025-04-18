@@ -171,7 +171,19 @@ body.dark .border-gray-300 {
     border-color: #334155 !important;
 }
 body.dark .bg-slate-100 {
-    background-color: #1e293b !important;
+    background-color: #23272f !important;
+}
+body.dark thead.bg-slate-100 th,
+body.dark .bg-slate-100 th {
+    background-color: #23272f !important;
+    color: #34d399 !important;
+    border-color: #334155 !important;
+}
+body.dark table,
+body.dark th,
+body.dark td {
+    color: #e0e7ef !important;
+    border-color: #334155 !important;
 }
 body.dark .favorite-btn {
     background: #23272f;
