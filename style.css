@@ -160,11 +160,12 @@ body.dark .text-primary,
 body.dark .text-primary-dark,
 body.dark .text-primary-darker {
     color: #34d399 !important;
+    text-shadow: 0 2px 8px #000a;
 }
 body.dark .bg-primary,
 body.dark .bg-teal,
 body.dark .bg-orange {
-    filter: brightness(0.85);
+    filter: brightness(0.95);
 }
 body.dark .border-gray-300 {
     border-color: #334155 !important;
@@ -183,7 +184,31 @@ body.dark .favorite-btn.favorited {
     border-color: #fbbf24;
 }
 body.dark #recipeModal {
-    background: rgba(20,20,30,0.88);
+    background: rgba(20,20,30,0.92);
+}
+body.dark a,
+body.dark .text-gray-800,
+body.dark .text-gray-600,
+body.dark .text-gray-700 {
+    color: #e0e7ef !important;
+}
+body.dark .hover\:text-primary-dark:hover {
+    color: #34d399 !important;
+}
+body.dark .hover\:bg-primary:hover {
+    background-color: #059669 !important;
+    color: #fff !important;
+}
+body.dark .text-gray-500 {
+    color: #b3bac6 !important;
+}
+body.dark .font-semibold {
+    color: #f1f5f9 !important;
+}
+body.dark .theme-toggle-btn {
+    background: #23272f;
+    color: #34d399;
+    border-color: #34d399;
 }
 
 /* Botón de tema */

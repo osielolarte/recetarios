@@ -1190,16 +1190,67 @@ document.addEventListener('DOMContentLoaded', () => {
     // Guardar el último elemento enfocado antes de abrir el modal
     let lastFocusedElement = null;
 
-    // Función para mostrar tarjetas de recetas agrupadas por fuente
+    // Función para mostrar tarjetas de recetas agrupadas por fuente y favoritos
     function displayRecipes() {
         recipeListContainer.innerHTML = '';
         const cardColors = ['bg-primary', 'bg-teal', 'bg-orange'];
         let colorIndex = 0;
-
-        // Usar fragmentos para mejorar el rendimiento
         const fragment = document.createDocumentFragment();
 
-        // Función auxiliar para crear tarjetas
+        // FAVORITOS
+        const favoriteRecipes = [];
+        // Buscar en ambos recetarios
+        favorites.forEach(fid => {
+            let fav = veracruzRecipes.find(r => r.id === fid) || unicefRecipes.find(r => r.id === fid);
+            if (fav) favoriteRecipes.push({ ...fav });
+        });
+        if (favoriteRecipes.length > 0) {
+            const headerFav = document.createElement('div');
+            headerFav.className = 'section-header';
+            headerFav.id = 'section-favorites';
+            headerFav.innerHTML = `
+                <h2>⭐ Favoritos</h2>
+                <p>Tus recetas favoritas</p>
+            `;
+            fragment.appendChild(headerFav);
+            favoriteRecipes.forEach(recipe => {
+                // Color especial para favoritos
+                const card = document.createElement('div');
+                card.className = `recipe-card rounded-2xl shadow-lg overflow-hidden cursor-pointer bg-orange hover:shadow-xl flex flex-col h-72 relative group`;
+                card.onclick = (e) => {
+                    if (e.target.classList.contains('favorite-btn')) return;
+                    showRecipeDetail(recipe.id, recipe.source);
+                };
+                const imageUrl = recipe.image || (recipe.source === 'Veracruz'
+                    ? 'https://placehold.co/600x400/e0e7ff/4338ca?text=Platillo+Veracruz'
+                    : 'https://placehold.co/600x400/a5f3fc/0e7490?text=Platillo+UNICEF');
+                const cardTitle = (recipe.source === 'Veracruz') ? `Menú ${recipe.id}` : `Menú ${recipe.id}`;
+                const favBtn = document.createElement('button');
+                favBtn.className = 'favorite-btn' + (isFavorite(recipe.id) ? ' favorited' : '');
+                favBtn.innerHTML = isFavorite(recipe.id) ? '★' : '☆';
+                favBtn.title = isFavorite(recipe.id) ? 'Quitar de favoritos' : 'Agregar a favoritos';
+                favBtn.setAttribute('aria-label', favBtn.title);
+                favBtn.onclick = (ev) => {
+                    ev.stopPropagation();
+                    toggleFavorite(recipe.id);
+                };
+                card.innerHTML = `
+                    <div class="bg-orange flex-grow flex items-center justify-center p-4 h-1/2">
+                        <h3 class="font-bold text-3xl lg:text-4xl text-white text-center leading-tight" style="text-shadow:0 2px 8px #000a;">${cardTitle}</h3>
+                    </div>
+                    <div class="h-1/2 relative">
+                       <img src="${imageUrl}" alt="Imagen de ${recipe.title}" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e0e7ff/4338ca?text=Error+Imagen';">
+                       <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                           <p class="text-white text-base font-semibold truncate" title="${recipe.title}" style="text-shadow:0 2px 8px #000a;">${recipe.title}</p>
+                       </div>
+                    </div>
+                `;
+                card.appendChild(favBtn);
+                fragment.appendChild(card);
+            });
+        }
+
+        // Usar fragmentos para mejorar el rendimiento
         const createCard = (recipe, source) => {
             const card = document.createElement('div');
             const bgColor = cardColors[colorIndex % cardColors.length];
@@ -1376,6 +1427,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.key === 'Escape' && modal.style.display === 'flex') {
             hideRecipeDetail();
         }
+    });
+
+    // --- Scroll suave a sección de favoritos desde menú ---
+    document.querySelectorAll('.favorites-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const favSection = document.getElementById('section-favorites');
+            if (favSection) {
+                favSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
     });
 
     // --- Inicialización ---
