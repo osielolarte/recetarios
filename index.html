@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍲</text></svg>">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body class="bg-slate-50">
 
@@ -16,15 +17,18 @@
                 🍲 Recetarios Escolares
             </div>
             <div class="hidden md:flex space-x-4">
-                <a href="#section-veracruz" class="text-gray-600 hover:text-primary-dark transition duration-200">Veracruz</a>
-                <a href="#section-unicef" class="text-gray-600 hover:text-primary-dark transition duration-200">UNICEF</a>
+                <a href="#section-veracruz" class="text-gray-800 hover:text-primary-dark transition duration-200 font-semibold">Veracruz</a>
+                <a href="#section-unicef" class="text-gray-800 hover:text-primary-dark transition duration-200 font-semibold">UNICEF</a>
             </div>
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-600 hover:text-primary-dark focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
+            <div class="flex items-center">
+                <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Cambiar tema" title="Cambiar tema">🌙</button>
+                <div class="md:hidden ml-2">
+                    <button id="mobile-menu-button" class="text-gray-800 hover:text-primary-dark focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
         <div id="mobile-menu" class="md:hidden hidden bg-white py-2 absolute w-full shadow-lg">
@@ -39,11 +43,13 @@
         </div>
     </main>
 
-    <div id="recipeModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 transition-opacity duration-300">
+    <div id="recipeModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 transition-opacity duration-300"
+         tabindex="-1" aria-modal="true" role="dialog">
         <div class="bg-white rounded-xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col">
             <div class="flex justify-between items-center p-4 bg-primary text-white flex-shrink-0">
                  <h2 id="modalRecipeTitle" class="text-xl md:text-2xl font-semibold">Título de la Receta</h2>
-                 <button onclick="hideRecipeDetail()" class="text-white hover:text-emerald-100 text-3xl font-light leading-none">&times;</button>
+                 <button onclick="hideRecipeDetail()" class="text-white hover:text-emerald-100 text-3xl font-light leading-none"
+                         aria-label="Cerrar modal">&times;</button>
             </div>
             <div id="modalRecipeContent" class="p-5 md:p-6 overflow-y-auto modal-content flex-grow">
                 <img id="modalRecipeImage" src="" alt="Imagen de la receta" class="w-full h-56 object-cover rounded-lg mb-5 border border-gray-200" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/4a5568?text=Imagen+no+disponible';">
@@ -76,5 +82,12 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('service-worker.js');
+        });
+      }
+    </script>
 </body>
 </html>

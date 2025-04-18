@@ -37,15 +37,40 @@ body {
 #recipeModal {
     display: none;
     opacity: 0; /* Start hidden for transition */
+    pointer-events: none;
+    transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
+}
+#recipeModal.show {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* Clases Utilitarias para Colores (Ejemplo si no se usa Tailwind directo) */
-.text-primary { color: var(--primary-color); }
-.text-primary-dark { color: var(--primary-color-dark); }
-.text-primary-darker { color: var(--primary-color-darker); }
-.bg-primary { background-color: var(--primary-color); }
-.bg-teal { background-color: var(--teal-color); }
-.bg-orange { background-color: var(--orange-color); }
+.text-primary { 
+    color: var(--primary-color); 
+    text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+.text-primary-dark { 
+    color: var(--primary-color-dark); 
+    text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+.text-primary-darker { 
+    color: var(--primary-color-darker); 
+    text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+.bg-primary { 
+    background-color: var(--primary-color); 
+    color: #fff !important;
+}
+.bg-teal { 
+    background-color: var(--teal-color); 
+    color: #fff !important;
+}
+.bg-orange { 
+    background-color: var(--orange-color); 
+    color: #fff !important;
+}
 .border-primary { border-color: var(--primary-color); }
 
 /* Estilo para encabezados de sección */
@@ -55,12 +80,12 @@ body {
     padding-bottom: 0.5rem; /* pb-2 */
     margin-bottom: 1rem; /* mb-4 */
     border-bottom: 2px solid var(--primary-color);
-    scroll-margin-top: 70px; /* Ajusta este valor según la altura de tu navbar fija */
+    scroll-margin-top: 90px; /* Mejor para navbar sticky */
 }
 .section-header h2 {
     font-size: 1.5rem; /* text-2xl */
     font-weight: 700; /* font-bold */
-    color: var(--primary-color-dark);
+    color: #065f46; /* emerald-800, mejor contraste */
     text-align: center;
 }
 .section-header p {
@@ -75,15 +100,106 @@ body {
 
 /* Efecto hover sutil para tarjetas */
 .recipe-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+    transform: translateY(-8px) scale(1.025) rotate(-1deg);
+    box-shadow: 0 16px 32px -8px rgba(0,0,0,0.18), 0 4px 8px -4px rgba(0,0,0,0.12);
 }
 .recipe-card {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+    border: none;
+    font-weight: 600;
 }
 
 /* Ajuste para asegurar que el modal no cause doble scroll */
 body.modal-open {
     overflow: hidden;
+}
+
+/* Foco visible para accesibilidad */
+button:focus, [tabindex]:focus {
+    outline: 2px solid var(--primary-color-dark);
+    outline-offset: 2px;
+}
+
+/* Botón favorito */
+.favorite-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 2;
+    background: rgba(255,255,255,0.85);
+    border-radius: 9999px;
+    padding: 0.3rem 0.5rem;
+    color: #f59e42;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border: 2px solid #f59e42;
+}
+.favorite-btn.favorited {
+    background: #f59e42;
+    color: #fff;
+    border-color: #f59e42;
+}
+.favorite-btn:focus {
+    outline: 2px solid #f59e42;
+}
+
+/* Modo oscuro */
+body.dark {
+    background-color: #18181b;
+    color: #f1f5f9;
+}
+body.dark .bg-white,
+body.dark .section-header,
+body.dark .modal-content,
+body.dark .recipe-card {
+    background-color: #23272f !important;
+    color: #f1f5f9 !important;
+}
+body.dark .text-primary,
+body.dark .text-primary-dark,
+body.dark .text-primary-darker {
+    color: #34d399 !important;
+}
+body.dark .bg-primary,
+body.dark .bg-teal,
+body.dark .bg-orange {
+    filter: brightness(0.85);
+}
+body.dark .border-gray-300 {
+    border-color: #334155 !important;
+}
+body.dark .bg-slate-100 {
+    background-color: #1e293b !important;
+}
+body.dark .favorite-btn {
+    background: #23272f;
+    color: #fbbf24;
+    border-color: #fbbf24;
+}
+body.dark .favorite-btn.favorited {
+    background: #fbbf24;
+    color: #23272f;
+    border-color: #fbbf24;
+}
+body.dark #recipeModal {
+    background: rgba(20,20,30,0.88);
+}
+
+/* Botón de tema */
+.theme-toggle-btn {
+    background: #fff;
+    color: #18181b;
+    border-radius: 9999px;
+    padding: 0.3rem 0.7rem;
+    font-size: 1.3rem;
+    margin-left: 0.5rem;
+    border: 2px solid #059669;
+    transition: background 0.2s, color 0.2s;
+}
+body.dark .theme-toggle-btn {
+    background: #23272f;
+    color: #34d399;
+    border-color: #34d399;
 }
 

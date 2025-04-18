@@ -133,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 ],
                 preparation: [
                     "Hidratar la harina de maíz nixtamalizado (siga las instrucciones de la etiqueta del producto), para hacer las tortillas.",
-                    "Una vez hechas las tortillas poner al comal con fuego suave hasta tostar las tortillas.",
                     "Cocinar las alubias de manera tradicional, ya cocidas separarlas del caldo.",
                     "Lavar, desinfectar, picar el ejote y cocer a vapor por 10 minutos.",
                     "Lavar, desinfectar, jitomate, cebolla, cilantro y reservar.",
@@ -1143,13 +1142,62 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    // --- Funciones ---
+    // --- Favoritos y Tema ---
+    const FAVORITES_KEY = 'recetario_favoritos';
+    const THEME_KEY = 'recetario_tema';
+    let favorites = new Set(JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]'));
+    let theme = localStorage.getItem(THEME_KEY) || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    function saveFavorites() {
+        localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites]));
+    }
+    function toggleFavorite(recipeId) {
+        if (favorites.has(recipeId)) {
+            favorites.delete(recipeId);
+        } else {
+            favorites.add(recipeId);
+        }
+        saveFavorites();
+        displayRecipes();
+    }
+    function isFavorite(recipeId) {
+        return favorites.has(recipeId);
+    }
+
+    // Tema claro/oscuro
+    function applyTheme() {
+        if (theme === 'dark') {
+            document.body.classList.add('dark');
+            themeToggleBtn.textContent = '☀️';
+            themeToggleBtn.title = 'Tema claro';
+        } else {
+            document.body.classList.remove('dark');
+            themeToggleBtn.textContent = '🌙';
+            themeToggleBtn.title = 'Tema oscuro';
+        }
+    }
+    function toggleTheme() {
+        theme = (theme === 'dark') ? 'light' : 'dark';
+        localStorage.setItem(THEME_KEY, theme);
+        applyTheme();
+    }
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    themeToggleBtn.addEventListener('click', toggleTheme);
+    applyTheme();
+
+    // --- Mejoras de accesibilidad y rendimiento ---
+
+    // Guardar el último elemento enfocado antes de abrir el modal
+    let lastFocusedElement = null;
 
     // Función para mostrar tarjetas de recetas agrupadas por fuente
     function displayRecipes() {
-        recipeListContainer.innerHTML = ''; // Limpiar contenedor
+        recipeListContainer.innerHTML = '';
         const cardColors = ['bg-primary', 'bg-teal', 'bg-orange'];
         let colorIndex = 0;
+
+        // Usar fragmentos para mejorar el rendimiento
+        const fragment = document.createDocumentFragment();
 
         // Función auxiliar para crear tarjetas
         const createCard = (recipe, source) => {
@@ -1157,28 +1205,41 @@ document.addEventListener('DOMContentLoaded', () => {
             const bgColor = cardColors[colorIndex % cardColors.length];
             colorIndex++;
 
-            // Añadida clase 'recipe-card' para el efecto hover de CSS
-            card.className = `recipe-card rounded-2xl shadow-lg overflow-hidden cursor-pointer bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out flex flex-col h-72`;
-            card.onclick = () => showRecipeDetail(recipe.id, source);
+            card.className = `recipe-card rounded-2xl shadow-lg overflow-hidden cursor-pointer bg-white hover:shadow-xl flex flex-col h-72 relative group`;
+            card.onclick = (e) => {
+                if (e.target.classList.contains('favorite-btn')) return;
+                showRecipeDetail(recipe.id, source);
+            };
 
             const imageUrl = recipe.image || (source === 'Veracruz'
                 ? 'https://placehold.co/600x400/e0e7ff/4338ca?text=Platillo+Veracruz'
                 : 'https://placehold.co/600x400/a5f3fc/0e7490?text=Platillo+UNICEF');
 
-            const cardTitle = (source === 'Veracruz') ? `Menú ${recipe.id}` : `Menú ${recipe.id}`; // Usar Menú + ID para ambos
+            const cardTitle = (source === 'Veracruz') ? `Menú ${recipe.id}` : `Menú ${recipe.id}`;
+
+            const favBtn = document.createElement('button');
+            favBtn.className = 'favorite-btn' + (isFavorite(recipe.id) ? ' favorited' : '');
+            favBtn.innerHTML = isFavorite(recipe.id) ? '★' : '☆';
+            favBtn.title = isFavorite(recipe.id) ? 'Quitar de favoritos' : 'Agregar a favoritos';
+            favBtn.setAttribute('aria-label', favBtn.title);
+            favBtn.onclick = (ev) => {
+                ev.stopPropagation();
+                toggleFavorite(recipe.id);
+            };
 
             card.innerHTML = `
                 <div class="${bgColor} flex-grow flex items-center justify-center p-4 h-1/2">
-                    <h3 class="font-bold text-3xl lg:text-4xl text-white text-center leading-tight">${cardTitle}</h3>
+                    <h3 class="font-bold text-3xl lg:text-4xl text-white text-center leading-tight" style="text-shadow:0 2px 8px #000a;">${cardTitle}</h3>
                 </div>
                 <div class="h-1/2 relative">
-                   <img src="${imageUrl}" alt="Imagen de ${recipe.title}" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e0e7ff/4338ca?text=Error+Imagen';">
-                   <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/70 via-black/40 to-transparent">
-                       <p class="text-white text-base font-medium truncate" title="${recipe.title}">${recipe.title}</p>
+                   <img src="${imageUrl}" alt="Imagen de ${recipe.title}" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e0e7ff/4338ca?text=Error+Imagen';">
+                   <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                       <p class="text-white text-base font-semibold truncate" title="${recipe.title}" style="text-shadow:0 2px 8px #000a;">${recipe.title}</p>
                    </div>
                 </div>
             `;
-            recipeListContainer.appendChild(card);
+            card.appendChild(favBtn);
+            fragment.appendChild(card);
         };
 
         // Crear encabezado y tarjetas para Veracruz
@@ -1189,7 +1250,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <h2>Recetario Escolar Veracruz</h2>
             <p>Menús modalidad caliente</p>
         `;
-        recipeListContainer.appendChild(headerVeracruz);
+        fragment.appendChild(headerVeracruz);
         veracruzRecipes.forEach(recipe => createCard(recipe, 'Veracruz'));
 
         // Crear encabezado y tarjetas para UNICEF
@@ -1200,11 +1261,13 @@ document.addEventListener('DOMContentLoaded', () => {
             <h2>Recetario Saludable UNICEF</h2>
             <p>Sabores Sanos y Amigables con el Planeta</p>
         `;
-        recipeListContainer.appendChild(headerUnicef);
+        fragment.appendChild(headerUnicef);
         unicefRecipes.forEach(recipe => createCard(recipe, 'UNICEF'));
+
+        recipeListContainer.appendChild(fragment);
     }
 
-    // Función para mostrar detalles en el modal (Adaptada y sin Notas)
+    // Animación suave para modal
     function showRecipeDetail(id, source) {
         const recipe = (source === 'Veracruz')
                      ? veracruzRecipes.find(r => r.id === id)
@@ -1223,10 +1286,13 @@ document.addEventListener('DOMContentLoaded', () => {
         ingredientsTableVeracruz.style.display = 'none';
         ingredientsListUnicef.style.display = 'none';
 
+        const ingFragment = document.createDocumentFragment();
+        const prepFragment = document.createDocumentFragment();
+
         if (source === 'Veracruz') {
             ingredientsTableVeracruz.style.display = 'block';
             recipe.ingredients.forEach(ing => {
-                const row = modalIngredientsVeracruzBody.insertRow();
+                const row = document.createElement('tr');
                 row.className = 'border-b border-gray-200 last:border-b-0 hover:bg-slate-50';
                 row.innerHTML = `
                     <td class="border-r border-gray-300 p-2 align-top">${ing.name}</td>
@@ -1234,43 +1300,54 @@ document.addEventListener('DOMContentLoaded', () => {
                     <td class="border-r border-gray-300 p-2 align-top">${ing.escolar || '-'}</td>
                     <td class="p-2 align-top">${ing.secundaria || '-'}</td>
                 `;
+                ingFragment.appendChild(row);
             });
             if (recipe.ingredients.some(ing => ing.preescolar?.includes('C.S.') || ing.escolar?.includes('C.S.') || ing.secundaria?.includes('C.S.'))) {
-                 const noteRow = modalIngredientsVeracruzBody.insertRow();
-                 noteRow.innerHTML = `<td colspan="4" class="p-2 text-xs text-gray-500 bg-slate-50">* C.S. = Cantidad Suficiente</td>`;
+                const noteRow = document.createElement('tr');
+                noteRow.innerHTML = `<td colspan="4" class="p-2 text-xs text-gray-500 bg-slate-50">* C.S. = Cantidad Suficiente</td>`;
+                ingFragment.appendChild(noteRow);
             }
-        } else { // Source is UNICEF
+            modalIngredientsVeracruzBody.appendChild(ingFragment);
+        } else {
             ingredientsListUnicef.style.display = 'block';
             recipe.ingredients.forEach(ing => {
                 const li = document.createElement('li');
                 if (ing.endsWith(':') && ing.trim().split(' ').length < 4) {
-                     li.innerHTML = `<strong class="font-medium text-sm text-gray-800">${ing}</strong>`;
-                     li.className = 'mt-2 list-none -ml-4';
+                    li.innerHTML = `<strong class="font-medium text-sm text-gray-800">${ing}</strong>`;
+                    li.className = 'mt-2 list-none -ml-4';
                 } else {
                     li.textContent = ing.trim().startsWith('-') ? ing.trim().substring(1).trim() : ing.trim();
                 }
-                modalIngredientsUnicefList.appendChild(li);
+                ingFragment.appendChild(li);
             });
+            modalIngredientsUnicefList.appendChild(ingFragment);
         }
 
         recipe.preparation.forEach(step => {
             const li = document.createElement('li');
             li.textContent = step;
-            modalPreparationList.appendChild(li);
+            prepFragment.appendChild(li);
         });
+        modalPreparationList.appendChild(prepFragment);
 
+        lastFocusedElement = document.activeElement;
+        modal.classList.add('show');
         modal.style.display = 'flex';
-        document.body.classList.add('modal-open'); // Evita scroll del body
-        setTimeout(() => { modal.style.opacity = 1; }, 10);
+        setTimeout(() => {
+            modal.style.opacity = 1;
+            modal.querySelector('button, [tabindex]:not([tabindex="-1"])').focus();
+        }, 10);
+        document.body.classList.add('modal-open');
     }
 
-    // Función global para ocultar el modal (accesible desde el botón HTML)
     window.hideRecipeDetail = function() {
         modal.style.opacity = 0;
-        document.body.classList.remove('modal-open'); // Restaura scroll del body
+        modal.classList.remove('show');
+        document.body.classList.remove('modal-open');
         setTimeout(() => {
             modal.style.display = 'none';
-         }, 300);
+            if (lastFocusedElement) lastFocusedElement.focus();
+        }, 350);
     }
 
     // --- Event Listeners ---
@@ -1294,7 +1371,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-     // Cerrar modal con tecla Escape
+     // Cerrar modal con tecla Escape solo si está abierto
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape' && modal.style.display === 'flex') {
             hideRecipeDetail();
