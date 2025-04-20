@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         UNICEF: 'UNICEF'
     };
     const RECIPE_DATA_FILES = {
-        [RECIPE_SOURCES.VERACRUZ]: '/veracruz.json',
-        [RECIPE_SOURCES.UNICEF]: '/unicef.json'
+        [RECIPE_SOURCES.VERACRUZ]: './data/veracruz.json',
+        [RECIPE_SOURCES.UNICEF]: './data/unicef.json'
     };
     const CARD_COLORS = ['bg-emerald-600', 'bg-teal-600', 'bg-sky-600']; // Tailwind classes for card headers
 
