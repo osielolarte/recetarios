@@ -1,21 +1,55 @@
 {
-  "name": "Recetarios Escolares",
+  "name": "Recetarios Escolares Saludables",
   "short_name": "Recetarios",
+  "description": "Recetarios escolares saludables de Veracruz y UNICEF con modo offline.",
   "start_url": ".",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#059669",
+  "background_color": "#ffffff",
   "theme_color": "#059669",
-  "description": "Recetarios escolares saludables Veracruz y UNICEF",
+  "orientation": "portrait-primary",
   "icons": [
+    {
+      "src": "images/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "https://placehold.co/192x192/059669/fff.png?text=%F0%9F%8D%B2",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+     {
+      "src": "images/icons/maskable_icon_x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "https://placehold.co/512x512/059669/fff.png?text=%F0%9F%8D%B2",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+     {
+      "src": "images/icons/maskable_icon_x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

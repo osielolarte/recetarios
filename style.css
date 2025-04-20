@@ -1,112 +1,51 @@
 /* Importación de Fuente */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Variables de Color (opcional, Tailwind las maneja bien, pero útil para custom CSS) */
-:root {
-    --primary-color: #059669; /* emerald-600 */
-    --primary-color-dark: #047857; /* emerald-700 */
-    --primary-color-darker: #065f46; /* emerald-800 */
-    --teal-color: #0d9488; /* teal-600 */
-    --orange-color: #f97316; /* orange-500 */
-}
-
 /* Estilos Base */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f8fafc; /* bg-slate-50 */
+    /* Default background/color set by Tailwind classes in HTML */
     scroll-behavior: smooth; /* Para el desplazamiento suave de los enlaces del menú */
 }
+
+/* Component: Modal */
+/* ---------------- */
+/* Ocultar modal por defecto y transición */
+#recipeModal {
+    /* display: none; */ /* Managed by JS/Tailwind */
+    /* opacity: 0; */ /* Managed by Tailwind */
+    /* pointer-events: none; */ /* Managed by Tailwind */
+    /* transition: opacity 0.35s cubic-bezier(.4,0,.2,1); */ /* Managed by Tailwind */
+}
+/* #recipeModal.show { */ /* Managed by JS/Tailwind */
+    /* display: flex; */
+    /* opacity: 1; */
+    /* pointer-events: auto; */
+/* } */
 
 /* Estilo para la barra de desplazamiento del modal */
 .modal-content::-webkit-scrollbar {
     width: 8px;
 }
 .modal-content::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #f1f1f1; /* Light gray track */
     border-radius: 10px;
 }
 .modal-content::-webkit-scrollbar-thumb {
-    background: #a0aec0; /* gray-400 */
+    background: #a0aec0; /* Tailwind gray-400 */
     border-radius: 10px;
 }
 .modal-content::-webkit-scrollbar-thumb:hover {
-    background: #718096; /* gray-500 */
+    background: #718096; /* Tailwind gray-500 */
 }
-
-/* Ocultar modal por defecto */
-#recipeModal {
-    display: none;
-    opacity: 0; /* Start hidden for transition */
-    pointer-events: none;
-    transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
+body.dark .modal-content::-webkit-scrollbar-track {
+    background: #374151; /* Dark gray track */
 }
-#recipeModal.show {
-    display: flex;
-    opacity: 1;
-    pointer-events: auto;
+body.dark .modal-content::-webkit-scrollbar-thumb {
+    background: #6b7280; /* Darker gray thumb */
 }
-
-/* Clases Utilitarias para Colores (Ejemplo si no se usa Tailwind directo) */
-.text-primary { 
-    color: var(--primary-color); 
-    text-shadow: 0 1px 2px rgba(0,0,0,0.08);
-}
-.text-primary-dark { 
-    color: var(--primary-color-dark); 
-    text-shadow: 0 1px 2px rgba(0,0,0,0.08);
-}
-.text-primary-darker { 
-    color: var(--primary-color-darker); 
-    text-shadow: 0 1px 2px rgba(0,0,0,0.08);
-}
-.bg-primary { 
-    background-color: var(--primary-color); 
-    color: #fff !important;
-}
-.bg-teal { 
-    background-color: var(--teal-color); 
-    color: #fff !important;
-}
-.bg-orange { 
-    background-color: var(--orange-color); 
-    color: #fff !important;
-}
-.border-primary { border-color: var(--primary-color); }
-
-/* Estilo para encabezados de sección */
-.section-header {
-    grid-column: 1 / -1; /* Span all columns in grid */
-    padding-top: 1.5rem; /* pt-6 */
-    padding-bottom: 0.5rem; /* pb-2 */
-    margin-bottom: 1rem; /* mb-4 */
-    border-bottom: 2px solid var(--primary-color);
-    scroll-margin-top: 90px; /* Mejor para navbar sticky */
-}
-.section-header h2 {
-    font-size: 1.5rem; /* text-2xl */
-    font-weight: 700; /* font-bold */
-    color: #065f46; /* emerald-800, mejor contraste */
-    text-align: center;
-}
-.section-header p {
-    font-size: 0.875rem; /* text-sm */
-    color: #4b5563; /* text-gray-600 */
-    text-align: center;
-    margin-top: 0.25rem; /* mt-1 */
-}
-
-/* Estilos para el menú móvil (si se necesitan más allá de Tailwind) */
-/* Por ahora, Tailwind maneja la visibilidad con la clase 'hidden' */
-
-/* Efecto hover sutil para tarjetas */
-.recipe-card:hover {
-    transform: translateY(-8px) scale(1.025) rotate(-1deg);
-    box-shadow: 0 16px 32px -8px rgba(0,0,0,0.18), 0 4px 8px -4px rgba(0,0,0,0.12);
-}
-.recipe-card {
-    transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1);
-    border: none;
-    font-weight: 600;
+body.dark .modal-content::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af; /* Lighter gray thumb on hover */
 }
 
 /* Ajuste para asegurar que el modal no cause doble scroll */
@@ -114,26 +53,42 @@ body.modal-open {
     overflow: hidden;
 }
 
-/* Foco visible para accesibilidad */
-button:focus, [tabindex]:focus {
-    outline: 2px solid var(--primary-color-dark);
-    outline-offset: 2px;
+/* Component: Card */
+/* --------------- */
+/* Efecto hover sutil para tarjetas */
+.recipe-card {
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+    border: none; /* Tailwind handles borders if needed */
+    font-weight: 600; /* Tailwind font-semibold */
+}
+.recipe-card:hover,
+.recipe-card:focus-within { /* Apply hover effect on focus within card */
+    transform: translateY(-8px) scale(1.025) rotate(-1deg);
+    box-shadow: 0 16px 32px -8px rgba(0,0,0,0.18), 0 4px 8px -4px rgba(0,0,0,0.12);
+}
+body.dark .recipe-card:hover,
+body.dark .recipe-card:focus-within {
+     box-shadow: 0 16px 32px -8px rgba(50, 200, 150, 0.25), 0 4px 8px -4px rgba(50, 200, 150, 0.15);
 }
 
 /* Botón favorito */
 .favorite-btn {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    z-index: 2;
-    background: rgba(255,255,255,0.85);
-    border-radius: 9999px;
-    padding: 0.3rem 0.5rem;
-    color: #f59e42;
-    font-size: 1.5rem;
+    top: 0.5rem; /* Tailwind top-2 */
+    right: 0.5rem; /* Tailwind right-2 */
+    z-index: 2; /* Ensure it's above image gradient */
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 9999px; /* Tailwind rounded-full */
+    padding: 0.3rem 0.5rem; /* Custom padding */
+    color: #f59e42; /* Orange color for star outline */
+    font-size: 1.5rem; /* Tailwind text-2xl */
+    line-height: 1; /* Ensure consistent height */
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
     border: 2px solid #f59e42;
+    display: flex; /* Center star */
+    align-items: center;
+    justify-content: center;
 }
 .favorite-btn.favorited {
     background: #f59e42;
@@ -142,101 +97,110 @@ button:focus, [tabindex]:focus {
 }
 .favorite-btn:focus {
     outline: 2px solid #f59e42;
-}
-
-/* Modo oscuro */
-body.dark {
-    background-color: #18181b;
-    color: #f1f5f9;
-}
-body.dark .bg-white,
-body.dark .section-header,
-body.dark .modal-content,
-body.dark .recipe-card {
-    background-color: #23272f !important;
-    color: #f1f5f9 !important;
-}
-body.dark .text-primary,
-body.dark .text-primary-dark,
-body.dark .text-primary-darker {
-    color: #34d399 !important;
-    text-shadow: 0 2px 8px #000a;
-}
-body.dark .bg-primary,
-body.dark .bg-teal,
-body.dark .bg-orange {
-    filter: brightness(0.95);
-}
-body.dark .border-gray-300 {
-    border-color: #334155 !important;
-}
-body.dark .bg-slate-100 {
-    background-color: #23272f !important;
-}
-body.dark thead.bg-slate-100 th,
-body.dark .bg-slate-100 th {
-    background-color: #23272f !important;
-    color: #34d399 !important;
-    border-color: #334155 !important;
-}
-body.dark table,
-body.dark th,
-body.dark td {
-    color: #e0e7ef !important;
-    border-color: #334155 !important;
+    outline-offset: 2px;
 }
 body.dark .favorite-btn {
-    background: #23272f;
-    color: #fbbf24;
+    background: rgba(35, 39, 47, 0.85); /* dark:bg-gray-800 with opacity */
+    color: #fbbf24; /* Amber-400 */
     border-color: #fbbf24;
 }
 body.dark .favorite-btn.favorited {
     background: #fbbf24;
-    color: #23272f;
+    color: #1f2937; /* dark:text-gray-800 */
     border-color: #fbbf24;
 }
-body.dark #recipeModal {
-    background: rgba(20,20,30,0.92);
-}
-body.dark a,
-body.dark .text-gray-800,
-body.dark .text-gray-600,
-body.dark .text-gray-700 {
-    color: #e0e7ef !important;
-}
-body.dark .hover\:text-primary-dark:hover {
-    color: #34d399 !important;
-}
-body.dark .hover\:bg-primary:hover {
-    background-color: #059669 !important;
-    color: #fff !important;
-}
-body.dark .text-gray-500 {
-    color: #b3bac6 !important;
-}
-body.dark .font-semibold {
-    color: #f1f5f9 !important;
-}
-body.dark .theme-toggle-btn {
-    background: #23272f;
-    color: #34d399;
-    border-color: #34d399;
+body.dark .favorite-btn:focus {
+    outline: 2px solid #fbbf24;
 }
 
-/* Botón de tema */
+
+/* Component: Section Header */
+/* ------------------------ */
+.section-header {
+    grid-column: 1 / -1; /* Span all columns in grid */
+    padding-top: 1.5rem; /* pt-6 */
+    padding-bottom: 0.5rem; /* pb-2 */
+    margin-bottom: 1rem; /* mb-4 */
+    border-bottom: 2px solid #059669; /* emerald-600 */
+    scroll-margin-top: 90px; /* Offset for sticky navbar */
+}
+.section-header h2 {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    color: #065f46; /* emerald-800 */
+    text-align: center;
+}
+.section-header p {
+    font-size: 0.875rem; /* text-sm */
+    color: #4b5563; /* text-gray-600 */
+    text-align: center;
+    margin-top: 0.25rem; /* mt-1 */
+}
+body.dark .section-header {
+    border-bottom-color: #10b981; /* emerald-500 */
+}
+body.dark .section-header h2 {
+    color: #34d399; /* emerald-400 */
+}
+body.dark .section-header p {
+    color: #9ca3af; /* text-gray-400 */
+}
+
+/* Component: Theme Toggle Button */
+/* ----------------------------- */
 .theme-toggle-btn {
     background: #fff;
-    color: #18181b;
-    border-radius: 9999px;
-    padding: 0.3rem 0.7rem;
-    font-size: 1.3rem;
-    margin-left: 0.5rem;
-    border: 2px solid #059669;
+    color: #18181b; /* zinc-900 */
+    border-radius: 9999px; /* rounded-full */
+    padding: 0.3rem 0.7rem; /* Custom padding */
+    font-size: 1.3rem; /* Custom size */
+    margin-left: 0.5rem; /* ml-2 */
+    border: 2px solid #059669; /* border-emerald-600 */
     transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    display: flex; /* Center icon */
+    align-items: center;
+    justify-content: center;
+}
+.theme-toggle-btn:focus {
+     outline: 2px solid #047857; /* emerald-700 */
+     outline-offset: 2px;
 }
 body.dark .theme-toggle-btn {
-    background: #23272f;
-    color: #34d399;
-    border-color: #34d399;
+    background: #23272f; /* Custom dark bg */
+    color: #34d399; /* emerald-400 */
+    border-color: #34d399; /* border-emerald-400 */
+}
+body.dark .theme-toggle-btn:focus {
+     outline: 2px solid #34d399; /* emerald-400 */
 }
 
+/* Accessibility */
+/* ------------- */
+/* Foco visible general (Tailwind focus rings are often preferred) */
+/* button:focus, [tabindex]:focus, a:focus { */
+    /* outline: 2px solid #047857; */ /* emerald-700 */
+    /* outline-offset: 2px; */
+/* } */
+/* body.dark button:focus, body.dark [tabindex]:focus, body.dark a:focus { */
+    /* outline-color: #34d399; */ /* emerald-400 */
+/* } */
+
+/* Use Tailwind focus rings where possible for consistency */
+/* Example: focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 */
+
+/* Dark Mode Overrides (Specific overrides not handled by Tailwind dark: prefixes) */
+/* ------------------------------------------------------------------------------ */
+/* Tailwind dark: prefixes handle most cases in the HTML now */
+/* Example: body.dark .bg-white -> <div class="bg-white dark:bg-gray-800"> */
+
+/* Ensure table headers have good contrast in dark mode */
+body.dark thead th {
+    color: #d1d5db; /* gray-300 */
+}
+
+/* Ensure modal close button has focus style */
+body.dark #closeModalButton:focus {
+    outline: 2px solid white;
+    outline-offset: 1px;
+}

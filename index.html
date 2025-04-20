@@ -6,25 +6,25 @@
     <title>Recetarios Escolares</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍲</text></svg>">
+    <link rel="icon" href="favicon.png" type="image/png">
     <link rel="manifest" href="manifest.json">
 </head>
-<body class="bg-slate-50">
+<body class="bg-slate-50 dark:bg-zinc-900 dark:text-slate-100">
 
-    <nav class="bg-white shadow-md sticky top-0 z-40">
+    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="text-xl font-bold text-primary-dark">
+            <div class="text-xl font-bold text-emerald-700 dark:text-emerald-400">
                 🍲 Recetarios Escolares
             </div>
             <div class="hidden md:flex space-x-4">
-                <a href="#section-favorites" class="text-gray-800 hover:text-primary-dark transition duration-200 font-semibold favorites-link">Favoritos</a>
-                <a href="#section-veracruz" class="text-gray-800 hover:text-primary-dark transition duration-200 font-semibold">Veracruz</a>
-                <a href="#section-unicef" class="text-gray-800 hover:text-primary-dark transition duration-200 font-semibold">UNICEF</a>
+                <a href="#section-favorites" class="text-gray-800 dark:text-gray-200 hover:text-emerald-700 dark:hover:text-emerald-400 transition duration-200 font-semibold favorites-link">Favoritos</a>
+                <a href="#section-veracruz" class="text-gray-800 dark:text-gray-200 hover:text-emerald-700 dark:hover:text-emerald-400 transition duration-200 font-semibold">Veracruz</a>
+                <a href="#section-unicef" class="text-gray-800 dark:text-gray-200 hover:text-emerald-700 dark:hover:text-emerald-400 transition duration-200 font-semibold">UNICEF</a>
             </div>
             <div class="flex items-center">
                 <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Cambiar tema" title="Cambiar tema">🌙</button>
                 <div class="md:hidden ml-2">
-                    <button id="mobile-menu-button" class="text-gray-800 hover:text-primary-dark focus:outline-none">
+                    <button id="mobile-menu-button" class="text-gray-800 dark:text-gray-200 hover:text-emerald-700 dark:hover:text-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                         </svg>
@@ -32,62 +32,87 @@
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden hidden bg-white py-2 absolute w-full shadow-lg">
-            <a href="#section-favorites" class="block px-4 py-2 text-gray-800 hover:bg-primary hover:text-white transition duration-200 favorites-link">Favoritos</a>
-            <a href="#section-veracruz" class="block px-4 py-2 text-gray-800 hover:bg-primary hover:text-white transition duration-200">Veracruz</a>
-            <a href="#section-unicef" class="block px-4 py-2 text-gray-800 hover:bg-primary hover:text-white transition duration-200">UNICEF</a>
+        <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800 py-2 absolute w-full shadow-lg">
+            <a href="#section-favorites" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-700 transition duration-200 favorites-link">Favoritos</a>
+            <a href="#section-veracruz" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-700 transition duration-200">Veracruz</a>
+            <a href="#section-unicef" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-700 transition duration-200">UNICEF</a>
         </div>
     </nav>
 
     <main class="container mx-auto p-4 md:p-6">
         <div id="recipeListContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <p class="text-gray-500 italic col-span-full text-center">Cargando recetas...</p>
+            <p class="text-gray-500 dark:text-gray-400 italic col-span-full text-center">Cargando recetas...</p>
         </div>
     </main>
 
-    <div id="recipeModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 transition-opacity duration-300"
-         tabindex="-1" aria-modal="true" role="dialog">
-        <div class="bg-white rounded-xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col">
-            <div class="flex justify-between items-center p-4 bg-primary text-white flex-shrink-0">
+    <div id="recipeModal" class="fixed inset-0 bg-black bg-opacity-70 dark:bg-opacity-80 flex items-center justify-center p-4 z-50 transition-opacity duration-300 opacity-0 pointer-events-none"
+         tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="modalRecipeTitle" aria-describedby="modalRecipeContentContainer">
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col">
+            <div class="flex justify-between items-center p-4 bg-emerald-600 dark:bg-emerald-700 text-white flex-shrink-0">
                  <h2 id="modalRecipeTitle" class="text-xl md:text-2xl font-semibold">Título de la Receta</h2>
-                 <button onclick="hideRecipeDetail()" class="text-white hover:text-emerald-100 text-3xl font-light leading-none"
+                 <button id="closeModalButton" class="text-white hover:text-emerald-100 text-3xl font-light leading-none focus:outline-none focus:ring-2 focus:ring-white rounded-full"
                          aria-label="Cerrar modal">&times;</button>
             </div>
-            <div id="modalRecipeContent" class="p-5 md:p-6 overflow-y-auto modal-content flex-grow">
-                <img id="modalRecipeImage" src="" alt="Imagen de la receta" class="w-full h-56 object-cover rounded-lg mb-5 border border-gray-200" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/4a5568?text=Imagen+no+disponible';">
+            <div id="modalRecipeContentContainer" class="p-5 md:p-6 overflow-y-auto modal-content flex-grow">
+                <img id="modalRecipeImage" src="" alt="Imagen de la receta" class="w-full h-56 object-cover rounded-lg mb-5 border border-gray-200 dark:border-gray-600" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/4a5568?text=Imagen+no+disponible'; this.alt='Error al cargar imagen';">
 
-                <h3 class="text-xl font-semibold text-primary-darker mb-3">Ingredientes</h3>
+                <h3 class="text-xl font-semibold text-emerald-800 dark:text-emerald-300 mb-3">Ingredientes</h3>
                 <div id="ingredientsTableVeracruz" class="overflow-x-auto mb-5" style="display: none;">
-                    <table class="w-full text-sm border border-collapse border-gray-300 rounded-md overflow-hidden">
-                        <thead class="bg-slate-100 text-slate-700">
+                    <table class="w-full text-sm border border-collapse border-gray-300 dark:border-gray-600 rounded-md overflow-hidden">
+                        <thead class="bg-slate-100 dark:bg-gray-700 text-slate-700 dark:text-slate-200">
                             <tr>
-                                <th class="border border-gray-300 p-2 text-left font-medium">Ingrediente</th>
-                                <th class="border border-gray-300 p-2 text-left font-medium">Preescolar</th>
-                                <th class="border border-gray-300 p-2 text-left font-medium">Primaria</th>
-                                <th class="border border-gray-300 p-2 text-left font-medium">Secundaria</th>
+                                <th class="border border-gray-300 dark:border-gray-600 p-2 text-left font-medium">Ingrediente</th>
+                                <th class="border border-gray-300 dark:border-gray-600 p-2 text-left font-medium">Preescolar</th>
+                                <th class="border border-gray-300 dark:border-gray-600 p-2 text-left font-medium">Primaria</th>
+                                <th class="border border-gray-300 dark:border-gray-600 p-2 text-left font-medium">Secundaria</th>
                             </tr>
                         </thead>
-                        <tbody id="modalIngredientsVeracruzBody" class="text-gray-700">
+                        <tbody id="modalIngredientsVeracruzBody" class="text-gray-700 dark:text-gray-300">
                             </tbody>
                     </table>
                 </div>
                 <div id="ingredientsListUnicef" class="mb-5" style="display: none;">
-                     <ul id="modalIngredientsUnicefList" class="list-disc list-inside space-y-1 text-gray-700 pl-4">
+                     <ul id="modalIngredientsUnicefList" class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 pl-4">
                          </ul>
                  </div>
 
-                <h3 class="text-xl font-semibold text-primary-darker mb-3">Modo de Preparación</h3>
-                <ol id="modalRecipePreparation" class="list-decimal list-inside space-y-2 text-gray-700 mb-4 pl-4">
+                <h3 class="text-xl font-semibold text-emerald-800 dark:text-emerald-300 mb-3">Modo de Preparación</h3>
+                <ol id="modalRecipePreparation" class="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300 mb-4 pl-4">
                     </ol>
             </div>
         </div>
     </div>
 
+    <template id="recipe-card-template">
+        <div class="recipe-card rounded-2xl shadow-lg overflow-hidden cursor-pointer bg-white dark:bg-gray-800 hover:shadow-xl flex flex-col h-72 relative group" tabindex="0">
+             <div class="card-header flex-grow flex items-center justify-center p-4 h-1/2">
+                <h3 class="card-title font-bold text-3xl lg:text-4xl text-white text-center leading-tight" style="text-shadow:0 2px 8px #000a;">
+                    </h3>
+            </div>
+            <div class="h-1/2 relative">
+               <img src="" alt="" class="card-image absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e0e7ff/4338ca?text=Error+Imagen'; this.alt='Error al cargar imagen';">
+               <div class="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                   <p class="recipe-title text-white text-base font-semibold truncate" title="" style="text-shadow:0 2px 8px #000a;">
+                       </p>
+               </div>
+            </div>
+            <button class="favorite-btn" title="Agregar a favoritos" aria-label="Agregar a favoritos">
+                ☆ </button>
+        </div>
+    </template>
+
     <script src="script.js"></script>
     <script>
+      // Register Service Worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('service-worker.js');
+          navigator.serviceWorker.register('service-worker.js')
+            .then(registration => {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(error => {
+              console.log('ServiceWorker registration failed: ', error);
+            });
         });
       }
     </script>

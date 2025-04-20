@@ -1,0 +1,650 @@
+[
+  {
+    "id": "U1",
+    "source": "UNICEF",
+    "title": "Ensalada de Pasta",
+    "image": "https://i.imgur.com/WZrQY1G.png",
+    "ingredients": [
+      "½ bolsa de codito chico (bolsa de 200 gr)",
+      "1 taza de garbanzos cocidos, picados",
+      "1 taza de pepino pelado y picado",
+      "1 taza de zanahoria rallada",
+      "1 taza de elote amarillo",
+      "½ taza de yogurt sin azúcar",
+      "2 cucharadas de mostaza amarilla",
+      "½ cucharadita de orégano seco",
+      "1 pizca de sal",
+      "1 pizca de pimienta negra"
+    ],
+    "preparation": [
+      "Remojar los garbanzos y cocerlos en una olla con agua y una pizca de sal.",
+      "Cocinar la pasta en una olla con abundante agua hirviendo con un poco de sal.",
+      "Cocinar hasta que esté al dente. Revisar los tiempos de la pasta que se use, ya que depende del tamaño de codito, el más chico está listo en unos 8 minutos.",
+      "Colar la pasta y dejar enfriar un poco con agua.",
+      "Mientras la pasta se cocina, preparar los demás ingredientes. Se puede empezar picando los garbanzos cocidos finamente para ayudar con la textura a las niñas y niños.",
+      "Pelar el pepino, retirar las semillas y cortar en cubitos. Pelar y rallar la zanahoria y drenar el elote o descongelar si se está usando elote congelado.",
+      "En un tazón grande mezclar yogurt, mostaza, orégano seco, sal y pimienta. Se puede agregar 1 cucharada de agua para hacer más ligera la mezcla.",
+      "Cuando esté mezclado el aderezo, agregar la pasta fría o tibia, los vegetales y los garbanzos picados.",
+      "Mezclar, rectificar y ajustar la sazón y disfrutar, ya sea tibia, a temperatura ambiente o fría.",
+      "Si se quiere dar un toque de acidez, agregar un poco de jugo de limón."
+    ]
+  },
+  {
+    "id": "U2",
+    "source": "UNICEF",
+    "title": "Tacos de Guisado (Picadillo de Cerdo)",
+    "image": "https://i.imgur.com/GhiQzJj.png",
+    "ingredients": [
+      "Picadillo:",
+      "  500 gr carne molida de cerdo (o pollo/pavo)",
+      "  ½ cebolla blanca picada finamente",
+      "  1 chayote, en cubos pequeños",
+      "  2 zanahorias, peladas y en cubos pequeños",
+      "  ½ cucharita de orégano seco",
+      "  1 pizca de sal y pimienta",
+      "  20 tortillas de maíz",
+      "Caldillo de tomate:",
+      "  3 tomates rojos maduros, cortados en 4",
+      "  ½ chile chipotle, opcional",
+      "  1 trocito de cebolla blanca",
+      "  2 dientes de ajo pelados",
+      "  1½ tazas de agua",
+      "  ½ cucharadita comino molido",
+      "  1 pizca de sal y pimienta"
+    ],
+    "preparation": [
+      "Para el caldillo de tomate, cortar los tomates en 4 y colocar en la licuadora. Agregar la cebolla, chipotle, ajos pelados, agua, comino, sal y pimienta. Licuar hasta que no queden grumos y reservar.",
+      "Pelar la zanahoria y cortar en cubitos. Al chayote se le deja la cáscara, solo lavarlo muy bien y cortar en cubitos, la pepita no se va a picar.",
+      "Calentar una olla y agregar la cebolla. Cocinar unos 3 minutos a fuego medio alto.",
+      "Agregar la carne molida y separar muy bien. Sazonar con orégano, pizca de sal y pimienta y cocinar hasta que cambie de color.",
+      "Agregar el chayote y la zanahoria, mezclar bien y cocinar unos 2 minutos a fuego medio mezclando de vez en cuando.",
+      "Verter el caldillo de tomate licuado sobre la carne con verduras. Mezclar bien, reducir el fuego, tapar y cocinar hasta que las verduras estén suaves y el guiso haya espesado ligeramente.",
+      "Calentar las tortillas y servir el picadillo en tacos."
+    ]
+  },
+  {
+    "id": "U3",
+    "source": "UNICEF",
+    "title": "Burritos o Taquitos de Frijoles Poder",
+    "image": "https://i.imgur.com/sVdlKSq.png",
+    "ingredients": [
+      "2 tazas frijoles bayos secos (o negros, pintos)",
+      "1 taza de zanahoria en rodajas (2 medianas aprox.)",
+      "2 dientes de ajo, pelados",
+      "¼ cebolla blanca",
+      "½ cucharadita de comino molido",
+      "1 pizca de sal y pimienta",
+      "Paprika molida (opcional, para color)",
+      "20 tortillas de maíz o harina (¡Prefiere maíz!)"
+    ],
+    "preparation": [
+      "Limpiar los frijoles, quitando las piedritas. Colocar en un tazón grande, cubrir con bastante agua y dejar reposar a temperatura ambiente de 8 a 12 horas.",
+      "Tirar el agua de remojo y enjuagar muy bien con agua.",
+      "Agregar 10 a 12 tazas de agua a una olla grande junto con los frijoles, ajo y cebolla.",
+      "Cuando hierva bajar a fuego medio bajo y cocinar medio tapado por 60 minutos.",
+      "Agregar a la olla la zanahoria pelada y cortada en rodajas medianas. Cocinar 10 a 20 minutos más o hasta que los frijoles estén cocidos.",
+      "Colocar en una licuadora la zanahoria, los frijoles, los ajos y la cebolla sin el caldo (hacer en partes si es necesario, agregar caldo poco a poco si se necesita).",
+      "Vaciar en una olla y sazonar con 1 pizca de sal, pimienta y comino. Se puede agregar paprika molida. Cocinar unos minutos a fuego bajo o hasta que espesen.",
+      "Calentar las tortillas, rellenar con los frijoles y enrollar para armar los burritos o taquitos."
+    ]
+  },
+  {
+    "id": "U4",
+    "source": "UNICEF",
+    "title": "Flautas Crujientes Sin Freír",
+    "image": "https://i.imgur.com/CmjEJfs.png",
+    "ingredients": [
+      "Flautas:",
+      "  20 tortillas de maíz",
+      "  Picadillo de cerdo (receta U2) o Frijoles poder (receta U3)",
+      "Curtido o ensalada de repollo:",
+      "  3 tazas de repollo verde en tiras (½ repollo chico aprox.)",
+      "  1 taza de zanahoria rallada (1 zanahoria aprox.)",
+      "  ½ taza de vinagre blanco o de manzana",
+      "  ½ taza de agua caliente",
+      "  ½ cucharita de orégano seco",
+      "  Cilantro picado (opcional)"
+    ],
+    "preparation": [
+      "Si las tortillas están frías, calentarlas en microondas o comal para suavizar.",
+      "Tener listo el relleno (frijoles o picadillo).",
+      "Rellenar la parte inferior de las tortillas calientes y enrollar (sujetar con palillo si es necesario).",
+      "Cocinar las flautas (elegir una opción):",
+      "  Opción 1 (Sartén): Cocinar a fuego medio por 5-7 min total, dorando todos los lados (sin aceite o muy poco).",
+      "  Opción 2 (Horno): Colocar en bandeja y hornear a 200°C por 14-16 min o hasta crujientes.",
+      "  Opción 3 (Air Fryer): Dorar a 190°C por 5-6 minutos.",
+      "Para el curtido: Colocar en recipiente grande el repollo, zanahoria. Agregar agua caliente, vinagre y orégano (y cilantro opcional). Mezclar.",
+      "Servir las flautas con el curtido y salsa al gusto."
+    ]
+  },
+  {
+    "id": "U5",
+    "source": "UNICEF",
+    "title": "Burritos o Taquitos de Desayuno con Chorizo Casero",
+    "image": "https://i.imgur.com/SAkbyMT.png",
+    "ingredients": [
+      "Chorizo:",
+      "  4 tazas de nopales picados (8 pencas limpias aprox.) (o coliflor/champiñones)",
+      "  2 dientes de ajo, pelados",
+      "  2 chiles guajillo o mirasol",
+      "  2 chiles pasilla",
+      "  ¼ taza de vinagre blanco o de manzana",
+      "  ¼ taza de agua de cocción de los chiles",
+      "  ½ cucharita de comino molido",
+      "  ½ cucharita de orégano seco",
+      "  1 pizca de sal y pimienta negra",
+      "Burritos:",
+      "  20 tortillas de harina o de maíz (¡Prefiere maíz!)",
+      "  10 huevos",
+      "  2 papas medianas cocidas y picadas (opcional)",
+      "  1 pizca de sal y pimienta (para huevo)"
+    ],
+    "preparation": [
+      "Para el chorizo: Picar finamente en cubos los nopales. Colocar en un sartén sin aceite y cocinar a fuego alto por 4-6 min mezclando.",
+      "Retirar rabito y semillas de los chiles. Colocar en agua hirviendo con ajo pelado y cocinar por 3-5 min a fuego bajo.",
+      "Retirar del agua y licuar con el ajo, comino, orégano, vinagre, sal, pimienta y el agua de cocción.",
+      "Agregar la mezcla del chile a los nopales y cocinar a fuego bajo de 2-4 min. Probar y sazonar si es necesario. Guardar.",
+      "Para los burritos: Engrasar ligeramente un sartén. Agregar 1 cda. de chorizo de nopales por cada huevo a usar y cocinar unos segundos.",
+      "Opcional: agregar papas cocidas picadas.",
+      "Agregar los huevos batidos, sazonar con pizca de sal y pimienta. Mezclar y cocinar 2 min o hasta que estén cocidos.",
+      "Calentar las tortillas y rellenar con el huevo con chorizo."
+    ]
+  },
+  {
+    "id": "U6",
+    "source": "UNICEF",
+    "title": "Sopes y Gorditas Sanos",
+    "image": "https://i.imgur.com/sPQ0OWL.png",
+    "ingredients": [
+      "300 g de masa de maíz nixtamalizada (o 2½ tazas harina + ½ taza agua)",
+      "1½ taza de agua tibia (si se usa harina)",
+      "1 cucharada de linaza molida",
+      "½ cucharada de semillas de chía",
+      "2 tazas de espinaca cruda picada o chaya",
+      "1 pizca de sal y pimienta",
+      "Relleno: Frijoles poder (U3), Picadillo (U2), Huevo con chorizo (U5), etc."
+    ],
+    "preparation": [
+      "Cocinar la espinaca/chaya en sartén caliente sin grasa por 2 min.",
+      "Mezclar en un recipiente la masa (o harina+agua) con chía, linaza, sal, pimienta y espinaca/chaya cocida. Agregar agua si es necesario hasta obtener buena consistencia.",
+      "Separar en 10 bolas iguales. Cubrir la masa restante.",
+      "Aplastar las bolas entre dos plásticos: Sopes (¾ cm grosor), Gorditas (10 cm diámetro, ½ cm grosor).",
+      "Para Sopes: Cocinar en comal caliente a fuego medio-alto 2 min por lado. Retirar y pellizcar orillas para formar borde. Calentar en sartén antes de servir y rellenar.",
+      "Para Gorditas: Cocinar en comal 2 min por lado, luego 30 seg más por lado. Reposar unos minutos, abrir con cuchillo (sin cortar por completo), rellenar y regresar al comal para calentar."
+    ]
+  },
+  {
+    "id": "U7",
+    "source": "UNICEF",
+    "title": "Nachos Caminantes",
+    "image": "https://i.imgur.com/0yBlcQC.png",
+    "ingredients": [
+      "30 tortillas de maíz (preferiblemente de días anteriores)",
+      "2½ tazas de frijoles bayos o pintos cocidos (enteros, no refritos)",
+      "Pico de Gallo:",
+      "  5 tomates",
+      "  ¼ pieza de cebolla morada",
+      "  ¼ taza de cilantro picado",
+      "  1 limón verde (jugo)",
+      "  1 pizca de sal y pimienta",
+      "Jalapeños encurtidos (opcional)"
+    ],
+    "preparation": [
+      "Para el pico de gallo: Mezclar tomates picados, cebolla picada y cilantro picado. Sazonar con jugo de limón, pizca de sal y pimienta.",
+      "Para los totopos: Cortar las tortillas en triángulos. Poner en charola para hornear sin encimar.",
+      "Hornear a 200°C por 10-12 min o hasta crujientes y dorados (sin aceite). Alternativa: air fryer o comal.",
+      "Para servir (por porción): Colocar totopos (aprox. 3 tortillas), ¼ taza de frijoles calientes, 2 cdas. de pico de gallo y jalapeños al gusto."
+    ]
+  },
+  {
+    "id": "U8",
+    "source": "UNICEF",
+    "title": "Ceviche de Lentejas",
+    "image": "https://i.imgur.com/HVTYppz.png",
+    "ingredients": [
+      "½ taza de lentejas crudas",
+      "½ taza de pepino picado",
+      "½ taza de tomate rojo picado",
+      "½ taza de zanahoria rallada",
+      "2 cucharadas de cilantro picado",
+      "2 cucharadas de aceite de oliva",
+      "2 cucharadas de jugo de naranja",
+      "2 cucharadas de jugo de limón",
+      "½ cucharada de mostaza amarilla",
+      "1 pizca de sal y pimienta",
+      "10 tostadas de maíz, para servir",
+      "Mango en cubos (opcional, si es temporada)"
+    ],
+    "preparation": [
+      "Remojar lentejas (opcional, 1h o toda la noche). Colar y enjuagar.",
+      "Cocinar lentejas en abundante agua hasta suaves (aprox. 30 min). Cocinar a fuego bajo una vez que hiervan.",
+      "Picar pepino y tomate en cubitos. Rallar zanahoria. Picar cilantro.",
+      "Mezclar en un tazón aceite de oliva, jugo de naranja, jugo de limón, mostaza, pizca de sal y pimienta.",
+      "Agregar lentejas cocidas (sin líquido), pepino, tomate, zanahoria y cilantro. Mezclar bien (agregar mango opcional aquí).",
+      "Rectificar sazón. Servir con tostadas o solo."
+    ]
+  },
+  {
+    "id": "U9",
+    "source": "UNICEF",
+    "title": "Ramen Saludable",
+    "image": "https://i.imgur.com/gAtjPl3.png",
+    "ingredients": [
+      "400 gr de espagueti crudo",
+      "10 tazas de caldo de pollo casero (bien sazonado)",
+      "5 cucharadas de salsa de soya",
+      "2½ cucharadas de ajo picado finamente",
+      "3 piezas de calabacitas",
+      "Para servir (opcional):",
+      "  Jugo de limón",
+      "  Chile seco",
+      "  Semillas de ajonjolí o sésamo",
+      "  Pollo cocido deshebrado"
+    ],
+    "preparation": [
+      "Cocinar el espagueti en abundante agua hirviendo con sal hasta al dente (10-12 min aprox).",
+      "Mientras, con un rallador de tiras, pelar la calabacita sin llegar a las semillas.",
+      "Cuando a la pasta le quede 1 min de cocción, agregar las tiras de calabacita y cocinar junto.",
+      "Drenar la pasta con la calabacita y reservar.",
+      "En una olla, mezclar el caldo de pollo, ajo picado y salsa de soya. Llevar a ebullición.",
+      "Servir el caldo caliente sobre la pasta con calabacita.",
+      "Terminar con los ingredientes opcionales para servir al gusto."
+    ]
+  },
+  {
+    "id": "U10",
+    "source": "UNICEF",
+    "title": "Pizzas a la Mexicana",
+    "image": "https://i.imgur.com/zJNM0i2.png",
+    "ingredients": [
+      "Salsa de Tomate Casera:",
+      "  800 gr de tomates enteros (maduros, pelados)",
+      "  1 cucharada de ajo picado",
+      "  ¼ de pieza cebolla amarilla o blanca (en trozo)",
+      "  1 cucharadita de azúcar mascabado",
+      "  1 cucharita de orégano seco",
+      "  Chile seco quebrado (opcional)",
+      "  1 pizca de sal y pimienta",
+      "Pizzas:",
+      "  10 tortillas de maíz o de harina (¡Prefiere maíz!)",
+      "  2½ tazas de queso manchego rallado o queso Oaxaca",
+      "  Vegetales al gusto (Champiñones, piña, pimiento morrón, etc.)"
+    ],
+    "preparation": [
+      "Para la salsa: Licuar los tomates pelados con un poco de agua.",
+      "Calentar olla grande a fuego medio. Agregar ajo picado, orégano y chile seco (opcional). Cocinar a fuego bajo 2-3 min sin quemar.",
+      "Agregar tomates triturados, cebolla en trozo, sal, pimienta y azúcar. Cocinar tapado a fuego bajo (ligero burbujeo) por 30 min, mezclando a los 15 min.",
+      "Rectificar sazón (sal, pimienta, azúcar). Dejar enfriar por completo.",
+      "Para las pizzas: Calentar las tortillas en comal.",
+      "Cubrir con la salsa de tomate, esparcir queso rallado y vegetales al gusto.",
+      "Hornear en horno a 200°C, freidora de aire, sartén antiadherente o comal hasta que el queso se gratine.",
+      "(Opcional: dorar tortilla de un lado antes de agregar salsa para más crunch).",
+      "Cortar cada pizza en 4 rebanadas y servir."
+    ]
+  },
+  {
+    "id": "U11",
+    "source": "UNICEF",
+    "title": "Chile en Polvo Casero",
+    "image": "https://i.imgur.com/FQbAUfi.png",
+    "ingredients": [
+      "2 chiles guajillos grandes",
+      "4 chiles de árbol (ajustar cantidad para picor)",
+      "1 limón (jugo)",
+      "1 pizca de sal"
+    ],
+    "preparation": [
+      "Retirar rabito y semillas de los chiles.",
+      "Cortar en trozos y colocar en un plato. Cubrir con jugo de limón y reposar 5-10 min, volteando a la mitad.",
+      "Colocar en bandeja para hornear sin encimar.",
+      "Secar en horno a 150°C por 12-18 minutos. Deben quedar totalmente secos.",
+      "Dejar enfriar por completo.",
+      "Colocar en licuadora o procesador y triturar hasta pulverizar.",
+      "Agregar pizca de sal. Guardar en recipiente con tapa."
+    ]
+  },
+  {
+    "id": "U12",
+    "source": "UNICEF",
+    "title": "Esquites Sanos con Coliflor",
+    "image": "https://i.imgur.com/b5WKPYd.png",
+    "ingredients": [
+      "5 elotes",
+      "5 tazas coliflor picada finamente (tamaño grano de elote)",
+      "Limón, al gusto",
+      "Chile en polvo, al gusto (Receta U11)",
+      "1 pizca de sal y pimienta",
+      "Epazote (opcional, para guisar)"
+    ],
+    "preparation": [
+      "Limpiar los elotes y cocinar en abundante agua hirviendo (olla tapada) hasta suaves.",
+      "Mientras, cortar la coliflor en trozos tamaño grano de elote.",
+      "Desgranar los elotes cocidos.",
+      "Cocinar los trocitos de coliflor en agua hirviendo por 5 min (deben quedar suaves).",
+      "En una olla, agregar elote y coliflor cocidos.",
+      "Sazonar con pizca de sal y pimienta, mezclar bien. (Opcional: guisar con epazote).",
+      "Servir (1 taza total por porción) con chile en polvo y jugo de limón."
+    ]
+  },
+  {
+    "id": "U13",
+    "source": "UNICEF",
+    "title": "Fruta Crujiente",
+    "image": "https://i.imgur.com/HvoRjEe.jpeg",
+    "ingredients": [
+      "2½ tazas de mango en cubos (4 mangos aprox.) (o piña, tuna, sandía, melón, manzana)",
+      "2½ tazas de jícama en cubos (1 jícama chica aprox.)",
+      "10 cucharadas pepitas de calabaza (o cacahuates/semillas de girasol)",
+      "Chile en polvo, al gusto (Receta U11)",
+      "Jugo de limón, al gusto"
+    ],
+    "preparation": [
+      "Pelar la jícama y cortarla en cubos. (Tip: guardar en agua en el refri para mantener crujiente, cambiar agua cada 2 días).",
+      "Pelar y cortar el mango (o fruta elegida) en cubitos.",
+      "Al servir (por vaso): mezclar ¼ taza de fruta picada, ¼ taza de jícama picada.",
+      "Terminar con jugo de limón, chile en polvo y 1 cucharada de pepitas/semillas/cacahuates."
+    ]
+  },
+  {
+    "id": "U14",
+    "source": "UNICEF",
+    "title": "Picosito (Vegetales Rallados)",
+    "image": "https://i.imgur.com/9ayboaU.png",
+    "ingredients": [
+      "2½ tazas de zanahoria rallada (3 zanahorias aprox.)",
+      "2½ tazas de jícama rallada (¼ pieza jícama chica aprox.)",
+      "2½ tazas betabel rallado (1 betabel grande aprox.)",
+      "10 cucharadas de cacahuates (o pepitas/semillas girasol)",
+      "Chile en polvo, al gusto (Receta U11)",
+      "Jugo de limón, al gusto",
+      "Fruta picada (opcional, ¼ taza por porción: mango, manzana, piña, tuna)"
+    ],
+    "preparation": [
+      "Pelar los vegetales y rallar.",
+      "Servir en vasitos, acomodando por filas para un efecto colorido o mezclados.",
+      "Agregar la fruta picada opcional.",
+      "Añadir los cacahuates (o semillas).",
+      "Terminar con jugo de limón y chile en polvo."
+    ]
+  },
+  {
+    "id": "U15",
+    "source": "UNICEF",
+    "title": "Churritos de Garbanzo",
+    "image": "https://i.imgur.com/wCkn695.png",
+    "ingredients": [
+      "2 taza de harina de maíz",
+      "2 taza de harina de garbanzo",
+      "1¾ taza de agua tibia",
+      "¼ taza de aceite vegetal",
+      "1 cucharadita de chile en polvo (Receta U11)",
+      "1 pizca de sal",
+      "Papel encerado",
+      "Jugo de limón y chile para servir"
+    ],
+    "preparation": [
+      "En tazón grande, mezclar harina de maíz y garbanzo. Incorporar agua tibia.",
+      "Agregar aceite vegetal, chile en polvo y sal. Mezclar (manos o cuchara). La masa debe ser suave (agregar más agua tibia si está seca).",
+      "Separar en bolitas. Mantener cubierta la masa restante.",
+      "Formar churritos (elegir opción):",
+      "  Opción 1: Usar tortilladora o aplastar bolitas entre plásticos, luego cortar tiras con cuchillo.",
+      "  Opción 2: Estirar bolitas con las manos hasta formar tiras delgadas. Cortar con cuchillo.",
+      "Colocar en charola con papel encerado.",
+      "Hornear a 180°C por 10-12 minutos (revisar desde 8 min). Deben quedar crujientes.",
+      "Dejar enfriar. Servir con jugo de limón y chile.",
+      "Guardar en recipiente hermético."
+    ]
+  },
+  {
+    "id": "U16",
+    "source": "UNICEF",
+    "title": "Granola en Sartén",
+    "image": "https://i.imgur.com/xMR2htH.jpeg",
+    "ingredients": [
+      "1 taza de hojuelas de avena",
+      "½ taza de amaranto inflado natural",
+      "¼ taza de cacahuates picados",
+      "½ cucharada de semillas de chía",
+      "2 cucharadas de miel de abeja",
+      "½ cucharita de canela molida"
+    ],
+    "preparation": [
+      "Dorar hojuelas de avena en sartén a fuego medio por 3-4 min.",
+      "Agregar cacahuates y amaranto. Cocinar 2 min más, cuidando no quemar.",
+      "Agregar canela, chía y miel. Mezclar bien y cocinar hasta evaporar/secar (aprox. 2 min).",
+      "Retirar del fuego, vaciar en plato/tabla y dejar enfriar.",
+      "Despegar con las manos y guardar en recipiente hermético (dura 2 semanas)."
+    ]
+  },
+  {
+    "id": "U17",
+    "source": "UNICEF",
+    "title": "Galletas de Avena",
+    "image": "https://i.imgur.com/TPXG7tG.jpeg",
+    "ingredients": [
+      "1 plátano mediano maduro (¼ taza machacado)",
+      "1 huevo",
+      "2 cucharadas de aceite",
+      "2 cucharadas de yogurt natural sin azúcar",
+      "¼ taza de azúcar mascabado",
+      "1 cucharita de vainilla",
+      "½ cucharita de canela molida",
+      "2 cucharaditas de polvo de hornear",
+      "2 tazas de copos de avena",
+      "¼ taza de nuez picada",
+      "1 pizca de sal"
+    ],
+    "preparation": [
+      "Precalentar horno a 180°C. Preparar bandeja (engrasar o usar papel encerado/capacillos).",
+      "Licuar 2 tazas de copos de avena para hacer harina.",
+      "Machacar plátano con tenedor en un tazón (necesitas ¼ taza).",
+      "Agregar al plátano: huevo, aceite, yogurt, azúcar, vainilla, canela, sal. Mezclar bien.",
+      "Agregar harina de avena y polvo de hornear. Incorporar casi por completo.",
+      "Incorporar nuez picada, mezclar solo hasta integrar (no sobremezclar).",
+      "Formar galletas (aprox. 16 chicas) con cucharita copeteada en la bandeja. Dar forma redonda sin presionar mucho.",
+      "Hornear 10-12 min (bandeja del medio) o hasta ligeramente doradas del fondo.",
+      "Dejar reposar 5 min en la bandeja antes de pasar a enfriar."
+    ]
+  },
+  {
+    "id": "U18",
+    "source": "UNICEF",
+    "title": "Bolitas de Jamaica Enchilada",
+    "image": "https://i.imgur.com/WUn6k7m.png",
+    "ingredients": [
+      "2 tazas de flor de jamaica cocida (la que sobra del agua U22)",
+      "1 taza de arándanos secos (o ciruelas pasa sin hueso)",
+      "2 cucharada de jugo de limón",
+      "1 cucharita chile en polvo (Receta U11)",
+      "Chile en polvo extra para cubrir (opcional)"
+    ],
+    "preparation": [
+      "Colocar flor de jamaica (sobrante del agua) en olla con agua nueva. Cocinar 5 min a fuego medio para suavizar más.",
+      "Si los arándanos/ciruelas están secos, remojar 2 min en agua hirviendo y drenar bien.",
+      "Colar la flor de jamaica cocida.",
+      "Procesar/picar finamente la flor de jamaica (procesador, licuadora potente o cuchillo).",
+      "Agregar arándanos/ciruelas, jugo de limón, chile en polvo (1 cdita). Procesar/picar hasta formar una pasta.",
+      "Formar bolitas pequeñas.",
+      "Opcional: cubrir cada bolita con más chile en polvo.",
+      "Guardar en recipiente hermético."
+    ]
+  },
+  {
+    "id": "U19",
+    "source": "UNICEF",
+    "title": "Bolis o Paletas de Fruta con Yogurt Natural",
+    "image": "https://i.imgur.com/b7o4ztg.png",
+    "ingredients": [
+      "1¼ tazas de yogurt natural sin azúcar",
+      "2 cucharadas de miel de abeja",
+      "1 taza de fruta picada (fresas, mango, etc., de temporada)",
+      "Vainilla al gusto"
+    ],
+    "preparation": [
+      "Picar la fruta elegida.",
+      "Incorporar la mitad de la miel y vainilla al yogurt, mezclar bien.",
+      "Agregar la miel restante y vainilla a la mezcla y revolver.",
+      "Formar paletas/bolis: alternar capas de yogurt y fruta en moldes/bolsitas.",
+      "Insertar palito (paletas) o cerrar bolsita (bolis).",
+      "Congelar 4 horas o hasta firmes."
+    ]
+  },
+  {
+    "id": "U20",
+    "source": "UNICEF",
+    "title": "Muffins con Zanahoria y Avena",
+    "image": "https://i.imgur.com/3d2gixr.png",
+    "ingredients": [
+      "1½ tazas de hojuelas o copos de avena",
+      "½ taza de harina de trigo integral",
+      "½ taza de coco seco rallado",
+      "1 cucharada de polvo de hornear",
+      "1 cucharita de canela molida",
+      "1 pizca de sal",
+      "2 huevos",
+      "½ taza de azúcar mascabado",
+      "¼ taza de aceite vegetal",
+      "¼ taza de yogurt natural",
+      "1 cucharada de vainilla",
+      "1 taza de zanahoria, pelada y rallada (1 aprox.)",
+      "1 taza de calabacita rallada (1 mediana aprox.)",
+      "Hojuelas de avena y coco rallado para decorar"
+    ],
+    "preparation": [
+      "Precalentar horno a 175°C. Preparar molde de muffins (engrasar o usar capacillos).",
+      "Pelar y rallar zanahoria. Rallar calabacita. (Picar si se prefieren trozos más pequeños).",
+      "Mezclar en tazón: aceite, azúcar, vainilla, canela, huevo, yogurt. Incorporar bien.",
+      "Agregar calabacita y zanahoria ralladas. Mezclar.",
+      "Licuar copos de avena hasta pulverizar. Vaciar en la mezcla.",
+      "Agregar harina integral, polvo de hornear y sal. Incorporar solo hasta no ver harina.",
+      "Agregar coco rallado. Terminar de incorporar sin sobremezclar.",
+      "Vaciar en los moldes preparados.",
+      "Decorar con hojuelas de avena y coco.",
+      "Hornear 30 min o hasta que palillo salga limpio.",
+      "Dejar reposar 5 min en el molde antes de sacar."
+    ]
+  },
+  {
+    "id": "U21",
+    "source": "UNICEF",
+    "title": "Refrigerio de Manzana Cremosa",
+    "image": "https://i.imgur.com/kjlltBY.png",
+    "ingredients": [
+      "5 manzanas escolares",
+      "1¼ tazas de zanahoria rallada",
+      "1¼ tazas de yogurt natural sin azúcar",
+      "½ taza de arándanos secos",
+      "½ taza de coco seco rallado",
+      "1 cucharada de vainilla",
+      "Coco seco para servir"
+    ],
+    "preparation": [
+      "Cortar manzana en cubitos (con cáscara).",
+      "Pelar y rallar zanahoria. Picar finamente.",
+      "Mezclar manzana con yogurt (para evitar oxidación).",
+      "Agregar zanahoria, arándanos, coco (½ taza) y vainilla. Mezclar bien.",
+      "Servir en vasitos y decorar con más coco."
+    ]
+  },
+  {
+    "id": "U22",
+    "source": "UNICEF",
+    "title": "Agua de Jamaica con Naranja",
+    "image": "https://i.imgur.com/dkRW5k8.png",
+    "ingredients": [
+      "1 taza de flor de jamaica seca",
+      "12 tazas de agua",
+      "½ taza de jugo de naranja",
+      "4 cucharadas de azúcar mascabado",
+      "1 naranja en rodajas (bien limpia)"
+    ],
+    "preparation": [
+      "En olla, hervir 6 tazas de agua. Agregar flor de jamaica. Cocinar a fuego bajo 5 min.",
+      "Apagar fuego, reposar 10 min.",
+      "Colar el agua (guardar flor para receta U18).",
+      "Mezclar azúcar mascabado con 1 taza de agua caliente y jugo de naranja hasta disolver.",
+      "Mezclar agua de jamaica colada con mezcla de jugo de naranja.",
+      "Agregar el agua restante (5 tazas).",
+      "Cortar naranja en trocitos y agregar al agua para infusionar.",
+      "Servir bien fría o con hielo. (No dejar naranja más de 1 día)."
+    ]
+  },
+  {
+    "id": "U23",
+    "source": "UNICEF",
+    "title": "Agua de Piña con Chía",
+    "image": "https://i.imgur.com/Kpx9KaS.png",
+    "ingredients": [
+      "4 tazas de piña picada (usar la más madura)",
+      "7 tazas de agua",
+      "2 cucharaditas de semillas de chía"
+    ],
+    "preparation": [
+      "Pelar y cortar piña en cubos.",
+      "Licuar piña con un poco del agua.",
+      "Pasar por colador (opcional).",
+      "Agregar a jarra, verter agua restante y semillas de chía. Mezclar bien.",
+      "Dejar reposar 10 min para hidratar chía.",
+      "Servir bien fría o con hielos."
+    ]
+  },
+  {
+    "id": "U24",
+    "source": "UNICEF",
+    "title": "Agua de Sandía con Coco",
+    "image": "https://i.imgur.com/1Io0fKg.png",
+    "ingredients": [
+      "12 tazas de sandía en cubos, sin semillas (usar la más dulce)",
+      "2 tazas de agua de coco (o agua natural)",
+      "Limón al gusto para servir (opcional)",
+      "Hielos para servir"
+    ],
+    "preparation": [
+      "Pelar y cortar sandía en cubos, quitar semillas.",
+      "Licuar sandía con agua de coco.",
+      "Pasar por colador.",
+      "Probar y decidir si agregar jugo de limón.",
+      "Servir bien fría o con hielos."
+    ]
+  },
+  {
+    "id": "U25",
+    "source": "UNICEF",
+    "title": "Atole de Chocolate con Avena",
+    "image": "https://i.imgur.com/2X7pcHg.png",
+    "ingredients": [
+      "1¼ tazas de copos de avena",
+      "10 tazas de leche descremada",
+      "⅔ taza de cocoa en polvo",
+      "1 cucharada de canela molida",
+      "2 cucharadas de vainilla"
+    ],
+    "preparation": [
+      "Licuar 2 tazas de leche con avena, cocoa, canela y vainilla hasta sin grumos.",
+      "Vaciar en olla y agregar leche restante.",
+      "Llevar a ebullición a fuego bajo, mezclando ocasionalmente.",
+      "Cuando empiece a hervir, apagar y servir."
+    ]
+  },
+  {
+    "id": "U26",
+    "source": "UNICEF",
+    "title": "Agua Infusionada",
+    "image": "https://i.imgur.com/YETwIZu.png",
+    "ingredients": [
+      "2½ litros de agua",
+      "½ pepino chico en rebanadas",
+      "1 limón en rodajas",
+      "1 naranja en rodajas",
+      "Hojas de menta o hierbabuena (opcional)"
+    ],
+    "preparation": [
+      "Llenar jarra con el agua.",
+      "Lavar pepino, naranja, limones y menta/hierbabuena.",
+      "Cortar pepino, naranja y limón en rebanadas.",
+      "Agregar al agua junto con menta/hierbabuena (opcional).",
+      "Dejar reposar 1-2 horas en refrigeración para infusionar.",
+      "Servir fría o con hielos."
+    ]
+  }
+]
